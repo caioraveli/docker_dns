@@ -1,0 +1,15 @@
+$TTL 3h
+@	IN	SOA	bindmaster01.go.com.br.	postmaster.go.com.br. (
+	2020102006	;	serial
+	28800	;	refresh (8h)
+	7200	;	retry (2h)
+	604800	;	expire (7d)
+3600	;	negative caching (1h)
+)
+
+	NS	bindmaster01.go.com.br.
+@ 	NS	bindslave01.go.com.br.
+
+bindmaster01	A	10.85.0.100
+bindslave01 	A	10.85.0.200
+host01		A	10.85.0.20

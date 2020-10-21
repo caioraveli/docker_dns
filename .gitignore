@@ -1,7 +1,2 @@
-/**
-!/.gitignore
-!/bind_master/*.yml
-!/bind_master/conf/bind/etc/named.conf
-!bind_master/conf/bind/etc/named.conf.options
-!bind_master/conf/bind/etc/named.conf.go
-!bind_master/conf/bind/etc/zones/go/internal/go.com.br.conf
+/host01
+bind.yml
