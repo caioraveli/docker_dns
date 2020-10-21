@@ -1,0 +1,5 @@
+bind_master/*
+bind_slave
+host01
+bind.yml
+!bind_master/bind.yml

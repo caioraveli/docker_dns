@@ -1,0 +1,25 @@
+version: "3"
+services:
+    dns:
+        container_name: "bindmaster01"
+        domainname: go.com.br
+        hostname: bindmaster01
+        image: "sameersbn/bind"
+        ports:
+                - "1153:53/tcp"
+                - "1153:53/udp"
+                - "10000:10000"
+        volumes:
+                # - "/home/caio/Documents/Cursos/LPIC2_UDEMY/207-DNS/conf/:/etc/bind/"
+                - "./conf/:/data"
+                - "./zones/:/var/cache/bind/"
+                - "./log/:/var/data/"
+        environment:
+                - "ROOT_PASSWORD=\"P@ssw0rd\""
+        networks:
+                default:
+                        ipv4_address: 10.85.0.100
+networks:
+    default:
+        external:
+            name: net_85
