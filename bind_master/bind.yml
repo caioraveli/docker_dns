@@ -15,7 +15,7 @@ services:
                 - "./zones/:/var/cache/bind/"
                 - "./log/:/var/data/"
         environment:
-                - "ROOT_PASSWORD=\"P@ssw0rd\""
+                - "ROOT_PASSWORD=\"SENHA QUALQUER\""
         networks:
                 default:
                         ipv4_address: 10.85.0.100
