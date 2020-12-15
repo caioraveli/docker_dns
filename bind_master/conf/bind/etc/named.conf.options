@@ -22,11 +22,12 @@ options {
 
 	//listen-on-v6 { any; };
 	listen-on port 53 { any; };
-	allow-query { localhost; 10.85.0.0/24; 192.168.0.0/24; };
-	
+	//allow-query { localhost; 10.85.0.0/24; 192.168.0.0/24; };
+	allow-query { any; };
+	version "xxx-xxx-xxx";	
 	
 };
-logging{
+logging {
 	channel default_debug {
 		file "/var/data/named.run";
 		severity dynamic;
@@ -36,8 +37,21 @@ logging{
 		file "/var/data/caio_log.run";
 		severity dynamic;
 	};
+
+	channel meus-registros {
+		file "/var/data/meus-registros.txt";
+		severity dynamic;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+	};
 	category queries {
 		caio;
+		meus-registros;
 	};
+
+	category security { meus-registros; default_debug;};
 };
 
+
+acl "hosts-autorizados" { localhost; 192.168.0.21; };

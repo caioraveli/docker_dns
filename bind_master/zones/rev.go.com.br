@@ -1,0 +1,19 @@
+$TTL 3h
+
+$ORIGIN 0.85.10.in-addr.arpa.
+@ IN SOA bindmaster01.go.com.br. root.go.com.br. (
+	2020121009 ; SERIAL
+	8h ; refresh
+	2h ; retry
+	1w ; expire
+	5m ; negative caching
+
+
+);
+
+@	3600 	IN 	NS	bindmaster01.go.com.br.
+@	3600	IN 	NS	bindslave01.go.com.br. 	
+
+
+100	3600	IN	PTR	bindmaster01.go.com.br.
+200	3600	IN	PTR	bindslave01.go.com.br.

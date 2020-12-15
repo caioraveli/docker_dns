@@ -1,0 +1,17 @@
+$TTL 500
+
+@ SOA bindmaster01.go.com.br. root.go.com.br (
+	2020121001; SERIAL
+	500; refresh
+	120; retry
+	500; expire
+	500; negative caching
+
+
+);
+
+@	3600 	IN 	NS	bindmaster01.go.com.br.
+@	3600	IN 	NS	bindslave01.go.com.br. 	
+
+
+100	3600	IN	PTR	bindmaster01.go.com.br.
